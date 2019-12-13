@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Ora2Pg - Database Migration Report</title>
+  <meta HTTP-EQUIV="Generator" CONTENT="Ora2Pg v20.0">
+  <meta HTTP-EQUIV="Date" CONTENT="Fri Dec 13 10:13:23 2019">
+  <style>
+body {
+	margin: 30px 0;
+	padding: 0;
+	background: #EFEFEF;
+	font-size: 12px;
+	color: #1e1e1e;
+}
+
+h1 {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #DFDFDF;
+	font-size: 22px;
+	padding: 0px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	color: #0094C7;
+}
+
+h2 {
+	margin-bottom: 10px;
+	font-size: 18px;
+	padding: 0px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	color: #0094C7;
+}
+
+#header table {
+	padding: 0 5px 0 5px;
+	border: 1px solid #DBDBDB;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+#header th {
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+	font-size: 16px;
+	color: #EC5800;
+}
+
+#content table {
+	padding: 0 5px 0 5px;
+	border: 1px solid #DBDBDB;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#content td {
+	padding: 0 5px 0 5px;
+	border-bottom: 1px solid #888888;
+	margin-bottom: 20px;
+	text-align: left;
+	vertical-align: top;
+}
+
+#content th {
+	border-bottom: 1px solid #BBBBBB;
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+	font-size: 16px;
+	color: #EC5800;
+}
+
+.object_name {
+        font-weight: bold;
+        color: #0094C7;
+	text-align: left;
+	white-space: pre;
+}
+
+.detail {
+	white-space: pre;
+}
+
+#footer {
+	margin-right: 10px;
+	text-align: right;
+}
+
+#footer a {
+	color: #EC5800;
+}
+
+#footer a:hover {
+	text-decoration: none;
+}
+  </style>
+</head>
+<body>
+<div id="header">
+<h1>Ora2Pg - Database Migration Report</h1>
+<table>
+<tr><th>Version</th><td>Oracle Database 12c Enterprise Edition Release 12.2.0.1.0</td></tr>
+<tr><th>Schema</th><td>SONARQUBE</td></tr>
+<tr><th>Size</th><td>21.12 MB</td></tr>
+</table>
+</div>
+<div id="content">
+<table>
+<tr><th>Object</th><th>Number</th><th>Invalid</th><th>Estimated cost</th><th>Comments</th><th>Details</th></tr>
+<tr><td class="object_name">DATABASE LINK</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td>Database links will be exported as SQL/MED PostgreSQL's Foreign Data Wrapper (FDW) extensions using oracle_fdw.</td><td class="detail"></td></tr>
+<tr><td class="object_name">GLOBAL TEMPORARY TABLE</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td>Global temporary table are not supported by PostgreSQL and will not be exported. You will have to rewrite some application code to match the PostgreSQL temporary table behavior.</td><td class="detail"></td></tr>
+<tr><td class="object_name">INDEX</td><td style="text-align: center;">126</td><td style="text-align: center;">0</td><td style="text-align: center;">20.1</td><td>75 index(es) are concerned by the export, others are automatically generated and will do so on PostgreSQL. Bitmap will be exported as btree_gin index(es) and hash index(es) will be exported as b-tree index(es) if any. Domain index are exported as b-tree but commented to be edited to mainly use FTS. Cluster, bitmap join and IOT indexes will not be exported at all. Reverse indexes are not exported too, you may use a trigram-based index (see pg_trgm) or a reverse() function based index and search. Use 'varchar_pattern_ops', 'text_pattern_ops' or 'bpchar_pattern_ops' operators in your indexes to improve search with the LIKE operator respectively into varchar, text or char columns.</td><td class="detail">75 b-tree index(es)<br></td></tr>
+<tr><td class="object_name">JOB</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td>Job are not exported. You may set external cron job with them.</td><td class="detail"></td></tr>
+<tr><td class="object_name">SEQUENCE</td><td style="text-align: center;">33</td><td style="text-align: center;">0</td><td style="text-align: center;">3.3</td><td>Sequences are fully supported, but all call to sequence_name.NEXTVAL or sequence_name.CURRVAL will be transformed into NEXTVAL('sequence_name') or CURRVAL('sequence_name').</td><td class="detail"></td></tr>
+<tr><td class="object_name">SYNONYM</td><td style="text-align: center;">295</td><td style="text-align: center;">0</td><td style="text-align: center;">29.5</td><td>SYNONYMs will be exported as views. SYNONYMs do not exists with PostgreSQL but a common workaround is to use views or set the PostgreSQL search_path in your session to access object outside the current schema.</td><td class="detail">apex is an alias to APEX_050000.APEX<br>apex_activity_log is an alias to APEX_050000.WWV_FLOW_USER_ACTIVITY_LOG<br>apex_admin is an alias to APEX_050000.APEX_ADMIN<br>apex_application is an alias to APEX_050000.WWV_FLOW<br>apex_applications is an alias to APEX_050000.APEX_APPLICATIONS<br>apex_application_all_auth is an alias to APEX_050000.APEX_APPLICATION_ALL_AUTH<br>apex_application_auth is an alias to APEX_050000.APEX_APPLICATION_AUTH<br>apex_application_authorization is an alias to APEX_050000.APEX_APPLICATION_AUTHORIZATION<br>apex_application_bc_entries is an alias to APEX_050000.APEX_APPLICATION_BC_ENTRIES<br>apex_application_breadcrumbs is an alias to APEX_050000.APEX_APPLICATION_BREADCRUMBS<br>apex_application_build_options is an alias to APEX_050000.APEX_APPLICATION_BUILD_OPTIONS<br>apex_application_caching is an alias to APEX_050000.APEX_APPLICATION_CACHING<br>apex_application_computations is an alias to APEX_050000.APEX_APPLICATION_COMPUTATIONS<br>apex_application_files is an alias to APEX_050000.WWV_FLOW_FILES<br>apex_application_global is an alias to APEX_050000.WWV_FLOW_GLOBAL<br>apex_application_groups is an alias to APEX_050000.APEX_APPLICATION_GROUPS<br>apex_application_install is an alias to APEX_050000.WWV_FLOW_APPLICATION_INSTALL<br>apex_application_items is an alias to APEX_050000.APEX_APPLICATION_ITEMS<br>apex_application_lists is an alias to APEX_050000.APEX_APPLICATION_LISTS<br>apex_application_list_entries is an alias to APEX_050000.APEX_APPLICATION_LIST_ENTRIES<br>apex_application_locked_pages is an alias to APEX_050000.APEX_APPLICATION_LOCKED_PAGES<br>apex_application_lovs is an alias to APEX_050000.APEX_APPLICATION_LOVS<br>apex_application_lov_entries is an alias to APEX_050000.APEX_APPLICATION_LOV_ENTRIES<br>apex_application_nav_bar is an alias to APEX_050000.APEX_APPLICATION_NAV_BAR<br>apex_application_pages is an alias to APEX_050000.APEX_APPLICATION_PAGES<br>apex_application_page_branches is an alias to APEX_050000.APEX_APPLICATION_PAGE_BRANCHES<br>apex_application_page_buttons is an alias to APEX_050000.APEX_APPLICATION_PAGE_BUTTONS<br>apex_application_page_comp is an alias to APEX_050000.APEX_APPLICATION_PAGE_COMP<br>apex_application_page_da is an alias to APEX_050000.APEX_APPLICATION_PAGE_DA<br>apex_application_page_da_acts is an alias to APEX_050000.APEX_APPLICATION_PAGE_DA_ACTS<br>apex_application_page_db_items is an alias to APEX_050000.APEX_APPLICATION_PAGE_DB_ITEMS<br>apex_application_page_flash5 is an alias to APEX_050000.APEX_APPLICATION_PAGE_FLASH5<br>apex_application_page_flash5_s is an alias to APEX_050000.APEX_APPLICATION_PAGE_FLASH5_S<br>apex_application_page_groups is an alias to APEX_050000.APEX_APPLICATION_PAGE_GROUPS<br>apex_application_page_ir is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR<br>apex_application_page_ir_cat is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_CAT<br>apex_application_page_ir_cgrps is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_CGRPS<br>apex_application_page_ir_col is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_COL<br>apex_application_page_ir_comp is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_COMP<br>apex_application_page_ir_cond is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_COND<br>apex_application_page_ir_grpby is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_GRPBY<br>apex_application_page_ir_pivot is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_PIVOT<br>apex_application_page_ir_pvagg is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_PVAGG<br>apex_application_page_ir_pvsrt is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_PVSRT<br>apex_application_page_ir_rpt is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_RPT<br>apex_application_page_ir_sub is an alias to APEX_050000.APEX_APPLICATION_PAGE_IR_SUB<br>apex_application_page_items is an alias to APEX_050000.APEX_APPLICATION_PAGE_ITEMS<br>apex_application_page_map is an alias to APEX_050000.APEX_APPLICATION_PAGE_MAP<br>apex_application_page_proc is an alias to APEX_050000.APEX_APPLICATION_PAGE_PROC<br>apex_application_page_regions is an alias to APEX_050000.APEX_APPLICATION_PAGE_REGIONS<br>apex_application_page_reg_cols is an alias to APEX_050000.APEX_APPLICATION_PAGE_REG_COLS<br>apex_application_page_rpt is an alias to APEX_050000.APEX_APPLICATION_PAGE_RPT<br>apex_application_page_rpt_cols is an alias to APEX_050000.APEX_APPLICATION_PAGE_RPT_COLS<br>apex_application_page_trees is an alias to APEX_050000.APEX_APPLICATION_PAGE_TREES<br>apex_application_page_val is an alias to APEX_050000.APEX_APPLICATION_PAGE_VAL<br>apex_application_parent_tabs is an alias to APEX_050000.APEX_APPLICATION_PARENT_TABS<br>apex_application_processes is an alias to APEX_050000.APEX_APPLICATION_PROCESSES<br>apex_application_shortcuts is an alias to APEX_050000.APEX_APPLICATION_SHORTCUTS<br>apex_application_static_files is an alias to APEX_050000.APEX_APPLICATION_STATIC_FILES<br>apex_application_substitutions is an alias to APEX_050000.APEX_APPLICATION_SUBSTITUTIONS<br>apex_application_supp_objects is an alias to APEX_050000.APEX_APPLICATION_SUPP_OBJECTS<br>apex_application_supp_obj_bopt is an alias to APEX_050000.APEX_APPLICATION_SUPP_OBJ_BOPT<br>apex_application_supp_obj_chck is an alias to APEX_050000.APEX_APPLICATION_SUPP_OBJ_CHCK<br>apex_application_supp_obj_scr is an alias to APEX_050000.APEX_APPLICATION_SUPP_OBJ_SCR<br>apex_application_tabs is an alias to APEX_050000.APEX_APPLICATION_TABS<br>apex_application_templates is an alias to APEX_050000.APEX_APPLICATION_TEMPLATES<br>apex_application_temp_bc is an alias to APEX_050000.APEX_APPLICATION_TEMP_BC<br>apex_application_temp_button is an alias to APEX_050000.APEX_APPLICATION_TEMP_BUTTON<br>apex_application_temp_calendar is an alias to APEX_050000.APEX_APPLICATION_TEMP_CALENDAR<br>apex_application_temp_files is an alias to APEX_050000.WWV_FLOW_TEMP_FILES<br>apex_application_temp_label is an alias to APEX_050000.APEX_APPLICATION_TEMP_LABEL<br>apex_application_temp_list is an alias to APEX_050000.APEX_APPLICATION_TEMP_LIST<br>apex_application_temp_page is an alias to APEX_050000.APEX_APPLICATION_TEMP_PAGE<br>apex_application_temp_popuplov is an alias to APEX_050000.APEX_APPLICATION_TEMP_POPUPLOV<br>apex_application_temp_region is an alias to APEX_050000.APEX_APPLICATION_TEMP_REGION<br>apex_application_temp_report is an alias to APEX_050000.APEX_APPLICATION_TEMP_REPORT<br>apex_application_themes is an alias to APEX_050000.APEX_APPLICATION_THEMES<br>apex_application_theme_files is an alias to APEX_050000.APEX_APPLICATION_THEME_FILES<br>apex_application_theme_styles is an alias to APEX_050000.APEX_APPLICATION_THEME_STYLES<br>apex_application_translations is an alias to APEX_050000.APEX_APPLICATION_TRANSLATIONS<br>apex_application_trans_dynamic is an alias to APEX_050000.APEX_APPLICATION_TRANS_DYNAMIC<br>apex_application_trans_map is an alias to APEX_050000.APEX_APPLICATION_TRANS_MAP<br>apex_application_trans_repos is an alias to APEX_050000.APEX_APPLICATION_TRANS_REPOS<br>apex_application_trees is an alias to APEX_050000.APEX_APPLICATION_TREES<br>apex_application_web_services is an alias to APEX_050000.APEX_APPLICATION_WEB_SERVICES<br>apex_appl_concatenated_files is an alias to APEX_050000.APEX_APPL_CONCATENATED_FILES<br>apex_appl_developer_comments is an alias to APEX_050000.APEX_APPL_DEVELOPER_COMMENTS<br>apex_appl_load_tables is an alias to APEX_050000.APEX_APPL_LOAD_TABLES<br>apex_appl_load_table_lookups is an alias to APEX_050000.APEX_APPL_LOAD_TABLE_LOOKUPS<br>apex_appl_load_table_rules is an alias to APEX_050000.APEX_APPL_LOAD_TABLE_RULES<br>apex_appl_page_calendars is an alias to APEX_050000.APEX_APPL_PAGE_CALENDARS<br>apex_appl_plugins is an alias to APEX_050000.APEX_APPL_PLUGINS<br>apex_appl_plugin_attributes is an alias to APEX_050000.APEX_APPL_PLUGIN_ATTRIBUTES<br>apex_appl_plugin_attr_values is an alias to APEX_050000.APEX_APPL_PLUGIN_ATTR_VALUES<br>apex_appl_plugin_events is an alias to APEX_050000.APEX_APPL_PLUGIN_EVENTS<br>apex_appl_plugin_files is an alias to APEX_050000.APEX_APPL_PLUGIN_FILES<br>apex_appl_plugin_settings is an alias to APEX_050000.APEX_APPL_PLUGIN_SETTINGS<br>apex_appl_template_options is an alias to APEX_050000.APEX_APPL_TEMPLATE_OPTIONS<br>apex_appl_template_opt_groups is an alias to APEX_050000.APEX_APPL_TEMPLATE_OPT_GROUPS<br>apex_appl_temp_page_dp is an alias to APEX_050000.APEX_APPL_TEMP_PAGE_DP<br>apex_appl_temp_region_dp is an alias to APEX_050000.APEX_APPL_TEMP_REGION_DP<br>apex_appl_theme_display_points is an alias to APEX_050000.APEX_APPL_THEME_DISPLAY_POINTS<br>apex_appl_user_interfaces is an alias to APEX_050000.APEX_APPL_USER_INTERFACES<br>apex_app_builder_api is an alias to APEX_050000.WWV_FLOW_APP_BUILDER_API<br>apex_authentication is an alias to APEX_050000.WWV_FLOW_AUTHENTICATION_API<br>apex_authorization is an alias to APEX_050000.WWV_FLOW_AUTHORIZATION_API<br>apex_cloud_archive is an alias to APEX_050000.WWV_FLOW_CLOUD_ARCHIVE<br>apex_collection is an alias to APEX_050000.WWV_FLOW_COLLECTION<br>apex_collections is an alias to APEX_050000.WWV_FLOW_COLLECTIONS<br>apex_css is an alias to APEX_050000.WWV_FLOW_CSS_API<br>apex_custom_auth is an alias to APEX_050000.HTMLDB_CUSTOM_AUTH<br>apex_data_load is an alias to APEX_050000.WWV_FLOW_DATA_UPLOAD<br>apex_debug is an alias to APEX_050000.WWV_FLOW_DEBUG_API<br>apex_debug_message is an alias to APEX_050000.WWV_FLOW_DEBUG_API<br>apex_debug_messages is an alias to APEX_050000.APEX_DEBUG_MESSAGES<br>apex_developer_activity_log is an alias to APEX_050000.APEX_DEVELOPER_ACTIVITY_LOG<br>apex_dictionary is an alias to APEX_050000.APEX_DICTIONARY<br>apex_error is an alias to APEX_050000.WWV_FLOW_ERROR_API<br>apex_escape is an alias to APEX_050000.WWV_FLOW_ESCAPE<br>apex_feedback_types is an alias to APEX_050000.WWV_FLOW_FEEDBACK_TYPES<br>apex_instance_admin is an alias to APEX_050000.WWV_FLOW_INSTANCE_ADMIN<br>apex_ir is an alias to APEX_050000.WWV_FLOW_WORKSHEET_UTIL<br>apex_item is an alias to APEX_050000.HTMLDB_ITEM<br>apex_javascript is an alias to APEX_050000.WWV_FLOW_JAVASCRIPT_API<br>apex_json is an alias to APEX_050000.WWV_FLOW_JSON<br>apex_lang is an alias to APEX_050000.HTMLDB_LANG<br>apex_ldap is an alias to APEX_050000.WWV_FLOW_LDAP<br>apex_legacy_plugins is an alias to APEX_050000.WWV_FLOW_LEGACY_PLUGINS<br>apex_login is an alias to APEX_050000.HTMLDB_LOGIN<br>apex_mail is an alias to APEX_050000.WWV_FLOW_MAIL_API<br>apex_mail_attachments is an alias to APEX_050000.WWV_FLOW_USER_MAIL_ATTACHMENTS<br>apex_mail_log is an alias to APEX_050000.WWV_FLOW_USER_MAIL_LOG<br>apex_mail_queue is an alias to APEX_050000.WWV_FLOW_USER_MAIL_QUEUE<br>apex_migration_acc_forms is an alias to APEX_050000.APEX_MIGRATION_ACC_FORMS<br>apex_migration_acc_projects is an alias to APEX_050000.APEX_MIGRATION_ACC_PROJECTS<br>apex_migration_acc_queries is an alias to APEX_050000.APEX_MIGRATION_ACC_QUERIES<br>apex_migration_acc_rpts is an alias to APEX_050000.APEX_MIGRATION_ACC_RPTS<br>apex_migration_acc_tables is an alias to APEX_050000.APEX_MIGRATION_ACC_TABLES<br>apex_migration_projects is an alias to APEX_050000.APEX_MIGRATION_PROJECTS<br>apex_migration_rev_forms is an alias to APEX_050000.APEX_MIGRATION_REV_FORMS<br>apex_migration_rev_queries is an alias to APEX_050000.APEX_MIGRATION_REV_QUERIES<br>apex_migration_rev_rpts is an alias to APEX_050000.APEX_MIGRATION_REV_RPTS<br>apex_migration_rev_tables is an alias to APEX_050000.APEX_MIGRATION_REV_TABLES<br>apex_mig_projects_update is an alias to APEX_050000.APEX_MIG_PROJECTS_UPDATE<br>apex_page is an alias to APEX_050000.WWV_FLOW_PAGE_API<br>apex_pkg_app_install_log is an alias to APEX_050000.APEX_PKG_APP_INSTALL_LOG<br>apex_plsql_job is an alias to APEX_050000.WWV_FLOW_PLSQL_JOB<br>apex_plsql_jobs is an alias to APEX_050000.WWV_FLOW_PLSQL_JOBS<br>apex_plugin is an alias to APEX_050000.WWV_FLOW_PLUGIN_API<br>apex_plugin_util is an alias to APEX_050000.WWV_FLOW_PLUGIN_UTIL<br>apex_region is an alias to APEX_050000.WWV_FLOW_REGION_API<br>apex_release is an alias to APEX_050000.APEX_RELEASE<br>apex_rest is an alias to APEX_050000.WWV_FLOW_REST<br>apex_rest_resource_handlers is an alias to APEX_050000.APEX_REST_RESOURCE_HANDLERS<br>apex_rest_resource_modules is an alias to APEX_050000.APEX_REST_RESOURCE_MODULES<br>apex_rest_resource_parameters is an alias to APEX_050000.APEX_REST_RESOURCE_PARAMETERS<br>apex_rest_resource_templates is an alias to APEX_050000.APEX_REST_RESOURCE_TEMPLATES<br>apex_spatial is an alias to APEX_050000.WWV_FLOW_SPATIAL_API<br>apex_standard_conditions is an alias to APEX_050000.APEX_STANDARD_CONDITIONS<br>apex_sys_all_constraints is an alias to APEX_050000.APEX_SYS_ALL_CONSTRAINTS<br>apex_sys_all_dependencies is an alias to APEX_050000.APEX_SYS_ALL_DEPENDENCIES<br>apex_sys_all_objects is an alias to APEX_050000.APEX_SYS_ALL_OBJECTS<br>apex_sys_all_synonyms is an alias to APEX_050000.APEX_SYS_ALL_SYNONYMS<br>apex_team_bugs is an alias to APEX_050000.APEX_TEAM_BUGS<br>apex_team_features is an alias to APEX_050000.APEX_TEAM_FEATURES<br>apex_team_feedback is an alias to APEX_050000.APEX_TEAM_FEEDBACK<br>apex_team_feedback_followup is an alias to APEX_050000.APEX_TEAM_FEEDBACK_FOLLOWUP<br>apex_team_milestones is an alias to APEX_050000.APEX_TEAM_MILESTONES<br>apex_team_todos is an alias to APEX_050000.APEX_TEAM_TODOS<br>apex_themes is an alias to APEX_050000.APEX_THEMES<br>apex_t_ldap_attribute is an alias to APEX_050000.WWV_FLOW_T_LDAP_ATTRIBUTE<br>apex_t_ldap_attributes is an alias to APEX_050000.WWV_FLOW_T_LDAP_ATTRIBUTES<br>apex_t_number is an alias to APEX_050000.WWV_FLOW_T_NUMBER<br>apex_t_varchar2 is an alias to APEX_050000.WWV_FLOW_T_VARCHAR2<br>apex_ui_default is an alias to APEX_050000.WWV_FLOW_HINT<br>apex_ui_defaults_attr_dict is an alias to APEX_050000.APEX_UI_DEFAULTS_ATTR_DICT<br>apex_ui_defaults_columns is an alias to APEX_050000.APEX_UI_DEFAULTS_COLUMNS<br>apex_ui_defaults_groups is an alias to APEX_050000.APEX_UI_DEFAULTS_GROUPS<br>apex_ui_defaults_lov_data is an alias to APEX_050000.APEX_UI_DEFAULTS_LOV_DATA<br>apex_ui_defaults_tables is an alias to APEX_050000.APEX_UI_DEFAULTS_TABLES<br>apex_ui_default_update is an alias to APEX_050000.APEX_UI_DEFAULT_UPDATE<br>apex_user_access_log is an alias to APEX_050000.WWV_FLOW_USER_ACCESS_LOG<br>apex_util is an alias to APEX_050000.HTMLDB_UTIL<br>apex_web_service is an alias to APEX_050000.WWV_FLOW_WEBSERVICES_API<br>apex_workspaces is an alias to APEX_050000.APEX_WORKSPACES<br>apex_workspace_access_log is an alias to APEX_050000.APEX_WORKSPACE_ACCESS_LOG<br>apex_workspace_activity_log is an alias to APEX_050000.APEX_WORKSPACE_ACTIVITY_LOG<br>apex_workspace_apex_users is an alias to APEX_050000.APEX_WORKSPACE_APEX_USERS<br>apex_workspace_clicks is an alias to APEX_050000.APEX_WORKSPACE_CLICKS<br>apex_workspace_developers is an alias to APEX_050000.APEX_WORKSPACE_DEVELOPERS<br>apex_workspace_files is an alias to APEX_050000.APEX_WORKSPACE_FILES<br>apex_workspace_groups is an alias to APEX_050000.APEX_WORKSPACE_GROUPS<br>apex_workspace_group_groups is an alias to APEX_050000.APEX_WORKSPACE_GROUP_GROUPS<br>apex_workspace_group_users is an alias to APEX_050000.APEX_WORKSPACE_GROUP_USERS<br>apex_workspace_log_archive is an alias to APEX_050000.APEX_WORKSPACE_LOG_ARCHIVE<br>apex_workspace_log_summary is an alias to APEX_050000.APEX_WORKSPACE_LOG_SUMMARY<br>apex_workspace_log_summary_usr is an alias to APEX_050000.APEX_WORKSPACE_LOG_SUMMARY_USR<br>apex_workspace_schemas is an alias to APEX_050000.APEX_WORKSPACE_SCHEMAS<br>apex_workspace_sessions is an alias to APEX_050000.APEX_WORKSPACE_SESSIONS<br>apex_workspace_session_groups is an alias to APEX_050000.APEX_WORKSPACE_SESSION_GROUPS<br>apex_workspace_sql_scripts is an alias to APEX_050000.APEX_WORKSPACE_SQL_SCRIPTS<br>apex_workspace_static_files is an alias to APEX_050000.APEX_WORKSPACE_STATIC_FILES<br>apex_workspace_ui_types is an alias to APEX_050000.APEX_WORKSPACE_UI_TYPES<br>apex_ws_applications is an alias to APEX_050000.APEX_WS_APPLICATIONS<br>apex_ws_app_pages is an alias to APEX_050000.APEX_WS_APP_PAGES<br>apex_ws_data_grid is an alias to APEX_050000.APEX_WS_DATA_GRID<br>apex_ws_data_grid_col is an alias to APEX_050000.APEX_WS_DATA_GRID_COL<br>apex_zip is an alias to APEX_050000.WWV_FLOW_ZIP<br>development_service_home is an alias to APEX_050000.DEVELOPMENT_SERVICE_HOME<br>development_service_home_login is an alias to APEX_050000.DEVELOPMENT_SERVICE_HOME_LOGIN<br>development_service_signup is an alias to APEX_050000.DEVELOPMENT_SERVICE_SIGNUP<br>f is an alias to APEX_050000.F<br>htmldb is an alias to APEX_050000.HTMLDB<br>htmldb_activity_log is an alias to APEX_050000.WWV_FLOW_USER_ACTIVITY_LOG<br>htmldb_admin is an alias to APEX_050000.HTMLDB_ADMIN<br>htmldb_application is an alias to APEX_050000.WWV_FLOW<br>htmldb_application_files is an alias to APEX_050000.WWV_FLOW_FILES<br>htmldb_application_global is an alias to APEX_050000.WWV_FLOW_GLOBAL<br>htmldb_collection is an alias to APEX_050000.WWV_FLOW_COLLECTION<br>htmldb_collections is an alias to APEX_050000.WWV_FLOW_COLLECTIONS<br>htmldb_custom_auth is an alias to APEX_050000.HTMLDB_CUSTOM_AUTH<br>htmldb_item is an alias to APEX_050000.HTMLDB_ITEM<br>htmldb_lang is an alias to APEX_050000.HTMLDB_LANG<br>htmldb_ldap is an alias to APEX_050000.WWV_FLOW_LDAP<br>htmldb_login is an alias to APEX_050000.HTMLDB_LOGIN<br>htmldb_mail is an alias to APEX_050000.WWV_FLOW_MAIL_API<br>htmldb_mail_log is an alias to APEX_050000.WWV_FLOW_USER_MAIL_LOG<br>htmldb_mail_queue is an alias to APEX_050000.WWV_FLOW_USER_MAIL_QUEUE<br>htmldb_plsql_job is an alias to APEX_050000.WWV_FLOW_PLSQL_JOB<br>htmldb_plsql_jobs is an alias to APEX_050000.WWV_FLOW_PLSQL_JOBS<br>htmldb_util is an alias to APEX_050000.HTMLDB_UTIL<br>nv is an alias to APEX_050000.NV<br>p is an alias to APEX_050000.P<br>v is an alias to APEX_050000.V<br>ws is an alias to APEX_050000.WS<br>wwv_flow is an alias to APEX_050000.WWV_FLOW<br>wwv_flow_api is an alias to APEX_050000.WWV_FLOW_API<br>wwv_flow_application_install is an alias to APEX_050000.WWV_FLOW_APPLICATION_INSTALL<br>wwv_flow_audit is an alias to APEX_050000.WWV_FLOW_AUDIT<br>wwv_flow_clickthru_log is an alias to APEX_050000.WWV_FLOW_CLICKTHRU_LOG<br>wwv_flow_cloud_archive_obj is an alias to APEX_050000.WWV_FLOW_CLOUD_ARCHIVE_OBJ<br>wwv_flow_collection is an alias to APEX_050000.WWV_FLOW_COLLECTION<br>wwv_flow_collections is an alias to APEX_050000.WWV_FLOW_COLLECTIONS<br>wwv_flow_css is an alias to APEX_050000.WWV_FLOW_CSS_API<br>wwv_flow_css_api is an alias to APEX_050000.WWV_FLOW_CSS_API<br>wwv_flow_customize is an alias to APEX_050000.WWV_FLOW_CUSTOMIZE<br>wwv_flow_custom_auth is an alias to APEX_050000.WWV_FLOW_CUSTOM_AUTH<br>wwv_flow_custom_auth_ldap is an alias to APEX_050000.WWV_FLOW_CUSTOM_AUTH_LDAP<br>wwv_flow_custom_auth_std is an alias to APEX_050000.WWV_FLOW_CUSTOM_AUTH_STD<br>wwv_flow_dual100 is an alias to APEX_050000.WWV_FLOW_DUAL100<br>wwv_flow_epg_include_modules is an alias to APEX_050000.WWV_FLOW_EPG_INCLUDE_MODULES<br>wwv_flow_error is an alias to APEX_050000.WWV_FLOW_ERROR_API<br>wwv_flow_error_api is an alias to APEX_050000.WWV_FLOW_ERROR_API<br>wwv_flow_escape is an alias to APEX_050000.WWV_FLOW_ESCAPE<br>wwv_flow_files is an alias to APEX_050000.WWV_FLOW_FILES<br>wwv_flow_file_mgr is an alias to APEX_050000.WWV_FLOW_FILE_MGR<br>wwv_flow_fnd_user_api is an alias to APEX_050000.WWV_FLOW_FND_USER_API<br>wwv_flow_global is an alias to APEX_050000.WWV_FLOW_GLOBAL<br>wwv_flow_group_users is an alias to APEX_050000.WWV_FLOW_GROUP_USERS<br>wwv_flow_hint is an alias to APEX_050000.WWV_FLOW_HINT<br>wwv_flow_html_api is an alias to APEX_050000.WWV_FLOW_HTML_API<br>wwv_flow_id is an alias to APEX_050000.WWV_FLOW_ID<br>wwv_flow_image_api is an alias to APEX_050000.WWV_FLOW_IMAGE_API<br>wwv_flow_init_htp_buffer is an alias to APEX_050000.WWV_FLOW_INIT_HTP_BUFFER<br>wwv_flow_item is an alias to APEX_050000.WWV_FLOW_ITEM<br>wwv_flow_item_help is an alias to APEX_050000.WWV_FLOW_ITEM_HELP<br>wwv_flow_javascript is an alias to APEX_050000.WWV_FLOW_JAVASCRIPT_API<br>wwv_flow_lang is an alias to APEX_050000.WWV_FLOW_LANG<br>wwv_flow_ldap is an alias to APEX_050000.WWV_FLOW_LDAP<br>wwv_flow_lists_of_values$_v is an alias to APEX_050000.WWV_FLOW_LISTS_OF_VALUES$_V<br>wwv_flow_list_of_values_data_v is an alias to APEX_050000.WWV_FLOW_LIST_OF_VALUES_DATA_V<br>wwv_flow_mail is an alias to APEX_050000.WWV_FLOW_MAIL_API<br>wwv_flow_months_mon is an alias to APEX_050000.WWV_FLOW_MONTHS_MON<br>wwv_flow_months_month is an alias to APEX_050000.WWV_FLOW_MONTHS_MONTH<br>wwv_flow_plugin is an alias to APEX_050000.WWV_FLOW_PLUGIN_API<br>wwv_flow_plugin_api is an alias to APEX_050000.WWV_FLOW_PLUGIN_API<br>wwv_flow_plugin_util is an alias to APEX_050000.WWV_FLOW_PLUGIN_UTIL<br>wwv_flow_preferences is an alias to APEX_050000.WWV_FLOW_PREFERENCES<br>wwv_flow_random is an alias to APEX_050000.WWV_FLOW_RANDOM<br>wwv_flow_render_shortcut is an alias to APEX_050000.WWV_FLOW_RENDER_SHORTCUT<br>wwv_flow_session_seq is an alias to APEX_050000.WWV_FLOW_SESSION_SEQ<br>wwv_flow_svg is an alias to APEX_050000.WWV_FLOW_SVG<br>wwv_flow_t_number is an alias to APEX_050000.WWV_FLOW_T_NUMBER<br>wwv_flow_t_varchar2 is an alias to APEX_050000.WWV_FLOW_T_VARCHAR2<br>wwv_flow_users is an alias to APEX_050000.WWV_FLOW_USERS<br>wwv_flow_user_access_log is an alias to APEX_050000.WWV_FLOW_USER_ACCESS_LOG<br>wwv_flow_user_activity_log is an alias to APEX_050000.WWV_FLOW_USER_ACTIVITY_LOG<br>wwv_flow_user_api is an alias to APEX_050000.WWV_FLOW_USER_API<br>wwv_flow_utilities is an alias to APEX_050000.WWV_FLOW_UTILITIES<br>wwv_flow_ws_import_api is an alias to APEX_050000.WWV_FLOW_WS_IMPORT_API<br>wwv_flow_years is an alias to APEX_050000.WWV_FLOW_YEARS<br>wwv_mig_acc_load is an alias to APEX_050000.WWV_MIG_ACC_LOAD<br>wwv_render_chart2 is an alias to APEX_050000.WWV_RENDER_CHART2<br>wwv_seq is an alias to APEX_050000.WWV_SEQ<br>z is an alias to APEX_050000.Z<br></td></tr>
+<tr><td class="object_name">TABLE</td><td style="text-align: center;">53</td><td style="text-align: center;">0</td><td style="text-align: center;">5.3</td><td></td><td class="detail">6 binary columns<br>Total number of rows: 53<br>Top 10 of tables sorted by number of rows:<br>rules_metadata has 1 rows<br>user_tokens has 1 rows<br>groups has 1 rows<br>permission_templates has 1 rows<br>ce_task_characteristics has 1 rows<br>internal_properties has 1 rows<br>perm_tpl_characteristics has 1 rows<br>project_links has 1 rows<br>users has 1 rows<br>manual_measures has 1 rows<br>Top 10 of largest tables:<br></td></tr>
+<tr><td class="object_name">TRIGGER</td><td style="text-align: center;">33</td><td style="text-align: center;">0</td><td style="text-align: center;">132</td><td>Total size of trigger code: 3269 bytes.</td><td class="detail">active_rules_idt: 3<br>active_rule_parameters_idt: 3<br>ce_activity_idt: 3<br>ce_queue_idt: 3<br>duplications_index_idt: 3<br>events_idt: 3<br>file_sources_idt: 3<br>groups_idt: 3<br>group_roles_idt: 3<br>issues_idt: 3<br>issue_changes_idt: 3<br>loaded_templates_idt: 3<br>manual_measures_idt: 3<br>metrics_idt: 3<br>notifications_idt: 3<br>permission_templates_idt: 3<br>perm_templates_groups_idt: 3<br>perm_templates_users_idt: 3<br>perm_tpl_characteristics_idt: 3<br>projects_idt: 3<br>project_links_idt: 3<br>project_measures_idt: 3<br>project_qprofiles_idt: 3<br>properties_idt: 3<br>quality_gates_idt: 3<br>quality_gate_conditions_idt: 3<br>rules_idt: 3<br>rules_parameters_idt: 3<br>rules_profiles_idt: 3<br>snapshots_idt: 3<br>users_idt: 3<br>user_roles_idt: 3<br>user_tokens_idt: 3<br></td></tr>
+<tr><th style="text-align: center; border-bottom: 0px; vertical-align: bottom;">Total</th><td style="text-align: center; border-bottom: 0px; vertical-align: bottom;">540</td><td style="text-align: center; border-bottom: 0px; vertical-align: bottom;">0</td><td style="text-align: center; border-bottom: 0px; vertical-align: bottom;">190.20</td><td colspan="2" style="border-bottom: 0px; vertical-align: bottom;">190.20 cost migration units means approximatively 3 man-day(s). The migration unit was set to 5 minute(s)
+</td></tr>
+</table>
+</div>
+<h2>Migration level: A-2</h2>
+
+<ul>
+<li>Migration levels:</li>
+  <ul>
+    <li>A - Migration that might be run automatically</li>
+    <li>B - Migration with code rewrite and a human-days cost up to 5 days</li>
+    <li>C - Migration with code rewrite and a human-days cost above 5 days</li>
+  </ul>
+<li>Technical levels:</li>
+  <ul>
+    <li>1 = trivial: no stored functions and no triggers</li>
+    <li>2 = easy: no stored functions but with triggers, no manual rewriting</li>
+    <li>3 = simple: stored functions and/or triggers, no manual rewriting</li>
+    <li>4 = manual: no stored functions but with triggers or views with code rewriting</li>
+    <li>5 = difficult: stored functions and/or triggers with code rewriting</li>
+  </ul>
+</ul>
+<h2>Details of cost assessment per trigger</h2>
+<ul>
+<li>Trigger user_roles_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger file_sources_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger manual_measures_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger active_rule_parameters_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger groups_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger perm_tpl_characteristics_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger metrics_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger perm_templates_users_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger quality_gate_conditions_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger perm_templates_groups_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger notifications_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger group_roles_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger rules_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger users_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger project_qprofiles_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger loaded_templates_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger ce_queue_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger events_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger project_measures_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger ce_activity_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger active_rules_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger rules_profiles_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger user_tokens_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger rules_parameters_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger duplications_index_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger properties_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger issue_changes_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger project_links_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger quality_gates_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger permission_templates_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger issues_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger snapshots_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+<li>Trigger projects_idt total estimated cost: 3</li>
+<ul>
+<li>TEST => 2</li>
+<li>SIZE => 1</li>
+</ul>
+</ul>
+
+<div id="footer">
+Generated by <a href="http://ora2pg.darold.net/">Ora2Pg v20.0</a>
+</div>
+</body>
+</html>
